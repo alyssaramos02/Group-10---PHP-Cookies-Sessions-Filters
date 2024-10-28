@@ -46,19 +46,7 @@
             transition: background-color 0.3s;
             margin-left: 10px;
         }
-        .button_container {
-            width: 100px; /* Set a fixed width for uniform size */
-            padding: 10px 0; /* Adjust padding to center text within fixed width */
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s;
-            margin-left: 10px;
-        }
-
+      
         .button:hover {
             background-color: #0056b3; /* Same hover color for both buttons */
         }
@@ -76,19 +64,32 @@
         </a>
     </div>
     <div class="nav-container"> 
-        <button class="button" onclick="openContactModal()">Contact Us</button>
-        <button class="button" onclick="logout()">Log Out</button> <!-- Both buttons styled the same -->
-    </div>
+    <button class="button" onclick="openContactModal()">Contact Us</button>
+    <button class="button" onclick="logoutAndRedirect()">Log Out</button> <!-- Both buttons styled the same -->
+</div>
 </header>
 
 <script>
-    function openContactModal() {
-        alert("Contact Modal Opened!");
-    }
+function openContactModal() {
+    alert("Contact Modal Opened!");
+}
 
-    function logout() {
-        alert("Logged out successfully!");
-    }
+function logoutAndRedirect() {
+    // Call your logout function (optional, if you have specific logout logic)
+    logout(); // This will alert "Logged out successfully!"
+    
+    // Show an alert message for logout success
+    alert("Logged out successfully!");
+
+    // Redirect to login.php after a short delay (optional)
+    setTimeout(() => {
+        window.location.href = 'login.php';
+    }, 1000); // Redirects after 1 second
+}
+
+function logout() {
+    // You can add any additional logout logic here if needed
+}
 </script>
 
 </body>
